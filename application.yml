@@ -1,11 +1,14 @@
-server: 
-  port: 3344 
-  
 spring:
+  profiles:
+    active: 
+    - dev
+---
+spring:
+  profile: dev
   application:
-    name:  zbwplusRepository-
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/zhangguxi/zbwplusRepository-.git
+    name: springcloud-config-dev
+---
+spring:
+  profile: test
+  application:
+    name: springcloud-config-test
